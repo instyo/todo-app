@@ -3,6 +3,13 @@ import './App.css'
 
 const STORAGE_KEY = 'todo-app.tasks'
 
+function createId() {
+  if (globalThis.crypto?.randomUUID) {
+    return crypto.randomUUID()
+  }
+  return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 11)}`
+}
+
 function loadTasks() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY)
@@ -26,7 +33,7 @@ function App() {
     const text = draft.trim()
     if (!text) return
     setTasks((prev) => [
-      { id: crypto.randomUUID(), text, done: false },
+      { id: createId(), text, done: false },
       ...prev,
     ])
     setDraft('')
