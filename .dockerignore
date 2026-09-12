@@ -1,4 +1,16 @@
 node_modules
-dist
 .git
+.github
 *.log
+README.md
+src
+public
+index.html
+package.json
+pnpm-lock.yaml
+vite.config.js
+.oxlintrc.json
+.gitignore
+.dockerignore
+docker-compose.yml
+Dockerfile
