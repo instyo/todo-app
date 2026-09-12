@@ -1,0 +1,7 @@
+services:
+  todo-app:
+    image: ghcr.io/instyo/todo-app:latest
+    container_name: todo-app
+    ports:
+      - "8080:80"
+    restart: unless-stopped
